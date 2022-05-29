@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget';
 import logo from './soysustrato-logoblanco.png';
 
 
@@ -22,6 +23,7 @@ function NavBar() {
               <form class="form-inline me-4">
                 <button class="btn btn-light" type="button">Login</button>
               </form>
+              <CartWidget />
             </nav>
   }
   
