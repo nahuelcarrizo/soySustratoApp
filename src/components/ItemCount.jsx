@@ -15,8 +15,10 @@ export default function ItemCount({ stock, initial, onAdd }) {
 
   return (
     <>
-      <div className="row" id="itemCountContainer">
-        <p className="m-auto">Camisa tiger</p>
+      <div
+        className="row justify-content-center p-4 align-self-end"
+        id="itemCountContainer"
+      >
         <div className="row m-auto position-relative">
           <div className="row m-0 bg-white" id="buttonCount">
             <button
@@ -46,7 +48,10 @@ export default function ItemCount({ stock, initial, onAdd }) {
           )}
         </div>
         <div className="row m-auto">
-          <button className="btn btn-outline-primary" onClick={() => onAdd()}>
+          <button
+            className="btn btn-outline-primary mt-3"
+            onClick={() => onAdd()}
+          >
             Agregar al carrito
           </button>
         </div>

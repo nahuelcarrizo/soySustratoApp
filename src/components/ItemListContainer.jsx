@@ -1,17 +1,21 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
+import productosData from "../json/productosData.json";
 
-export default function ItemListContainer({ greeting }) {
+export default function ItemListContainer() {
+  const prods = productosData;
+
   return (
-    <div
-      className="container d-flex flex-row justify-content-center align-items-center"
-      id="listContainer"
-    >
-      <ItemCount
-        stock={10}
-        initial={1}
-        onAdd={() => console.log("Agregado al carrito!")}
-      />
-    </div>
+    <>
+      <section>
+        <div className="mb-5 mt-5 text-center">
+          <h1>Tienda.</h1>
+          <h2>CONOCE NUESTROS PRODUCTOS QUE SE HACEN TIERRA EN 180 DÍAS.</h2>
+        </div>
+        <div className="container">
+          <ItemList productos={prods} />
+        </div>
+      </section>
+    </>
   );
 }

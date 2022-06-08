@@ -1,0 +1,16 @@
+.itemBody h3 {
+  font-size: 1rem;
+}
+
+.itemBody span {
+  font-size: 1.2rem;
+  color: green;
+  font-weight: bold;
+}
+
+.itemBody {
+  font-size: 0.8rem;
+}
+.itemImg {
+  max-width: 100%;
+}

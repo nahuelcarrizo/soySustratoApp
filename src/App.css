@@ -1,19 +1,5 @@
-
-#listContainer {
-  height: 90vh;
-  width: 100%;
-}
-
-#itemCountContainer {
-
-  height: 150px;
-  width: 225px;
-  background-color: rgb(247,247,247);
-
-}
 nav {
   height: 10vh;
-
 }
 
 button {
@@ -21,13 +7,9 @@ button {
   color: blue;
 }
 
-#buttonCount{
+#buttonCount {
   border: 1px solid #d3d3d3;
   padding: 4px 0;
-}
-
-p {
-  font-size: 15px;
 }
 
 button + p {
