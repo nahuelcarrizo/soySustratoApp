@@ -14,12 +14,9 @@ export default function Item({ id, nombre, precio, img, categoria }) {
           <span>{precio}</span>
           <br />
 
-          <a target="_blank">
-            + Info del producto
-            <Link to={`/ItemDetailContainer/${id}`} />
-          </a>
+          <Link to={`/ItemDetailContainer/${id}`}>+ Info del producto</Link>
         </div>
-        r
+
         <ItemCount
           stock={10}
           initial={1}

@@ -3,9 +3,8 @@ import ItemList from "./ItemList";
 import productosData from "../json/productosData.json";
 import ItemDetailContainer from "./ItemDetailContainer";
 
-export default function ItemListContainer({ detalles }) {
+export default function ItemListContainer() {
   const prods = productosData;
-  console.log(detalles);
 
   return (
     <>
