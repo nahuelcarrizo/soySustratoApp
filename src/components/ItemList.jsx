@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 
-export default function ItemList({ productos }) {
+export default function ItemList({ productos, detalles }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isOk, setIsOk] = useState([]);
 
@@ -31,11 +31,13 @@ export default function ItemList({ productos }) {
         isOk.map((item) => (
           <Item
             key={item.id}
+            id={item.id}
             nombre={item.nombre}
             precio={item.precio}
             img={item.img}
             descripcion={item.descripcion}
             categoria={item.categoria}
+            detalle={detalles}
           />
         ))}
     </div>

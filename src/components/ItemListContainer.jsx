@@ -1,9 +1,11 @@
 import React from "react";
 import ItemList from "./ItemList";
 import productosData from "../json/productosData.json";
+import ItemDetailContainer from "./ItemDetailContainer";
 
-export default function ItemListContainer() {
+export default function ItemListContainer({ detalles }) {
   const prods = productosData;
+  console.log(detalles);
 
   return (
     <>

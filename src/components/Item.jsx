@@ -2,7 +2,7 @@ import React from "react";
 import ItemCount from "./ItemCount";
 import "./item.css";
 
-export default function Item({ nombre, precio, img, descripcion, categoria }) {
+export default function Item({ id, nombre, precio, img, categoria }) {
   return (
     <>
       <div className="col-lg-3 col-12 border m-4 p-3 d-flex flex-column justify-content-between">
@@ -11,8 +11,10 @@ export default function Item({ nombre, precio, img, descripcion, categoria }) {
         <div className="itemBody">
           <h3>{nombre}</h3>
           <span>{precio}</span>
-          <p className="mh-100">{descripcion}</p>
+          <br />
+          <a target="_blank">+ Info del producto</a>
         </div>
+        r
         <ItemCount
           stock={10}
           initial={1}
