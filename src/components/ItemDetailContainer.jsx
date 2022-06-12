@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer({ selectItem }) {
   const [detailOpen, setDetailOpen] = useState([]);
 
+  const id = useParams();
   useEffect(() => {
     const detailOk = new Promise((res, rej) => {
       setTimeout(() => {

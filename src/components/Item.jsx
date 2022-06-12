@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 import "./item.css";
+import { Link } from "react-router-dom";
 
 export default function Item({ id, nombre, precio, img, categoria }) {
   return (
@@ -12,7 +13,11 @@ export default function Item({ id, nombre, precio, img, categoria }) {
           <h3>{nombre}</h3>
           <span>{precio}</span>
           <br />
-          <a target="_blank">+ Info del producto</a>
+
+          <a target="_blank">
+            + Info del producto
+            <Link to={`/ItemDetailContainer/${id}`} />
+          </a>
         </div>
         r
         <ItemCount

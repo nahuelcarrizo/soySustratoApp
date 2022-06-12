@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import './App.css';
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import React, {useState} from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -12,12 +13,12 @@ function App() {
     console.log(montarDetails);
   
     return (<>
-
+  <BrowserRouter />
     <NavBar />
     
     
     {montarDetails ? <ItemDetailContainer />: <ItemListContainer detalles={setMontarDetails} />}
-    
+    <BrowserRouter />
   </>
   );
 }
