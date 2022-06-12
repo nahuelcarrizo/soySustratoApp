@@ -1,0 +1,14 @@
+#carritoNumero {
+  position: relative;
+  color: white;
+  right: 10px;
+  top: 10px;
+  font-size: 10px;
+  background: red;
+  border-radius: 20%;
+  padding: 3px;
+}
+
+.nav-icon.icon-bag {
+  background-color: rgb(254, 212, 85);
+}

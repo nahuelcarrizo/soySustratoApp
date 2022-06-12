@@ -1,0 +1,13 @@
+header > nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  margin: auto;
+}
+
+nav > div > button {
+  z-index: 9;
+  cursor: pointer;
+}

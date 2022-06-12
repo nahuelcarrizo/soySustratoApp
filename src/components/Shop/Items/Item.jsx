@@ -1,6 +1,6 @@
 import React from "react";
 import ItemCount from "./ItemCount";
-import "./item.css";
+import "../../../css/Item.css";
 
 export default function Item({ nombre, precio, img, descripcion, categoria }) {
   return (

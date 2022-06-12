@@ -1,0 +1,74 @@
+[
+  {
+    "id": 0,
+    "category": "Productos",
+    "subcategory": "ENVASES RÍGIDOS",
+    "prod": "Cubo + Tapa",
+    "img": "/imgs/MenuMobile/CUBOTAPA.png",
+    "href": ""
+  },
+  {
+    "id": 1,
+    "category": "Productos",
+    "subcategory": "ENVASES RÍGIDOS",
+    "prod": "Vianda",
+    "img": "/imgs/MenuMobile/VIANDA.png",
+    "href": ""
+  },
+  {
+    "id": 2,
+    "category": "Productos",
+    "subcategory": "ENVASES RÍGIDOS",
+    "prod": "Cubo",
+    "img": "/imgs/MenuMobile/CUBO.png",
+    "href": ""
+  },
+  {
+    "id": 3,
+    "category": "Productos",
+    "subcategory": "ENVASES RÍGIDOS",
+    "prod": "Tapa",
+    "img": "/imgs/MenuMobile/TAPA.png",
+    "href": ""
+  },
+  {
+    "id": 4,
+    "category": "Productos",
+    "subcategory": "ENVASES FLEXIBLES",
+    "prod": "Sobre",
+    "img": "/imgs/MenuMobile/SOBRE.png",
+    "href": ""
+  },
+  {
+    "id": 5,
+    "category": "Productos",
+    "subcategory": "ENVASES FLEXIBLES",
+    "prod": "DoyPack",
+    "img": "/imgs/MenuMobile/DOYPACK.png",
+    "href": ""
+  },
+  {
+    "id": 6,
+    "category": "Productos",
+    "subcategory": "LÁMINAS",
+    "prod": "Laminas",
+    "img": "",
+    "href": ""
+  },
+  {
+    "id": 7,
+    "category": "Productos",
+    "subcategory": "Bolsas",
+    "prod": "Bolsa Bio R",
+    "img": "",
+    "href": ""
+  },
+  {
+    "id": 8,
+    "category": "Productos",
+    "subcategory": "VAJILLA DE SALVADO DE TRIGO",
+    "prod": "Vajilla",
+    "img": "",
+    "href": ""
+  }
+]

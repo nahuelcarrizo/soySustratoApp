@@ -1,33 +1,35 @@
 import CartWidget from "./CartWidget";
-import logo from "./soysustrato-logoblanco.png";
+import logo from "../imgs/logos/logo-transparente.png";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { useState } from "react";
+import "../css/Navbar.css";
+import MenuMobile from "./MenuMobile/MenuMobile";
 
-function NavBar() {
+export default function Navbar() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand ms-4" href="#">
-        <img src={logo} width="110" height="35" alt="logo de soy sustrato" />
-      </a>
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav mx-auto">
-          <li className="nav-item">
-            <a className="nav-link">Productos</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link">Nosotros</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link">FAQS</a>
-          </li>
-        </ul>
-      </div>
-      <form className="form-inline me-4">
-        <button className="btn btn-light" type="button">
-          Login
-        </button>
-      </form>
-      <CartWidget />
-    </nav>
+    <header className="position-absolute w-100 pt-2">
+      <nav className="navbar navbar-expand-sm navbar-dark position-relative justify-content-around">
+        <div>
+          <button
+            className="nav-icon icon-close"
+            onClick={() => setNavbarOpen(!navbarOpen)}
+          >
+            <HiOutlineMenuAlt4 />
+          </button>
+          <div>
+            {navbarOpen && (
+              <MenuMobile handle={() => setNavbarOpen(!navbarOpen)} />
+            )}
+          </div>
+        </div>
+
+        <a className="navbar-brand" href="#">
+          <img src={logo} width="142" height="39" alt="logo de soy sustrato" />
+        </a>
+        <CartWidget />
+      </nav>
+    </header>
   );
 }
-
-export default NavBar;

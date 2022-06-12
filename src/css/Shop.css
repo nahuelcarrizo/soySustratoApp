@@ -1,0 +1,23 @@
+.shop-welcome svg {
+  height: 55vh;
+}
+.shop-welcome {
+  overflow: visible;
+  height: auto;
+  max-height: 43vh;
+}
+
+.shop-welcome-text {
+  top: 7rem;
+  position: absolute;
+}
+
+.shop-welcome-text span {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 1.5rem;
+  font-family: "Roboto";
+  font-weight: 600;
+  opacity: 0.6;
+}
