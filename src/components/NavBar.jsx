@@ -1,22 +1,30 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import logo from "./soysustrato-logoblanco.png";
+import React from "react";
+import logo from "../public/imgs/productos/soysustrato-logoblanco.png";
 
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand ms-4" href="#">
+      <Link className="navbar-brand ms-4" to={`/ItemListContainer`}>
         <img src={logo} width="110" height="35" alt="logo de soy sustrato" />
-      </a>
+      </Link>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav mx-auto">
           <li className="nav-item">
-            <a className="nav-link">Productos</a>
+            <Link className="nav-link" to={`/ItemListContainer`}>
+              Productos
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link">Nosotros</a>
+            <Link className="nav-link" to={`/ItemListContainer`}>
+              Nosotros
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link">FAQS</a>
+            <Link className="nav-link" to={`/ItemListContainer`}>
+              FAQS
+            </Link>
           </li>
         </ul>
       </div>
