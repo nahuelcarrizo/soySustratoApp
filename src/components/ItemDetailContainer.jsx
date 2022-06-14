@@ -1,24 +1,50 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import productosData from "../json/productosData.json";
 
-export default function ItemDetailContainer({ selectItem }) {
-  const [detailOpen, setDetailOpen] = useState([]);
+export default function ItemDetailContainer() {
+  /* const [detailOpen, setDetailOpen] = useState([]);
 
-  const id = useParams();
+  const prods = productosData;
+
+  const { id } = useParams();
+
+  const getElementId = () => {
+    return id;
+  };
+
   useEffect(() => {
-    const detailOk = new Promise((res, rej) => {
+    const data = async () => {
+      const item = await getElementId;
+
+      setDetailOpen(item);
+    };
+    data([]);
+  }, []); */
+
+  const [itemInfoOk, setItemInfoOk] = useState([]);
+
+  const { id } = useParams();
+  const item = id;
+
+  useEffect(() => {
+    const getElement = new Promise((res, rej) => {
       setTimeout(() => {
-        res(selectItem);
+        res(item);
       }, 2000);
     });
 
-    detailOk
-      .then((item) => setDetailOpen(item))
+    getElement
+      .then((item) => setItemInfoOk(item))
       .catch(() => {
         console.log("algo falló");
       });
   }, []);
 
-  return <div>{detailOpen && <ItemDetail handle={detailOpen} />}</div>;
+  return (
+    <div>
+      <ItemDetail idItem={itemInfoOk} />
+    </div>
+  );
 }
