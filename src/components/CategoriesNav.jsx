@@ -13,11 +13,16 @@ export default function CategoriesNav() {
       <div className="container">
         <nav className="nav">
           {uniqueCategories.map((el) => (
-            <Link
-              className="nav-item"
-              key={el}
-              to={`/CategoryContainer/${el}`}
-            />
+            <button onClick={() => console.log(el)}>
+              <Link
+                className="nav-item"
+                key={el}
+                to={`/CategoryContainer/${uniqueCategories.indexOf(
+                  el
+                )}categoria`}
+              />
+              {el}
+            </button>
           ))}
         </nav>
       </div>

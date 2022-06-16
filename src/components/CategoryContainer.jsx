@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ItemList from "./ItemList";
 
-export default function CategoryContainer({ categorias }) {
-  const categories = categorias;
-  console.log(categorias);
+import { useParams } from "react-router-dom";
 
+export default function CategoryContainer() {
+  /*   const categories = categorias;
+/*   console.log(categorias);
+ */ const { el } = useParams();
+  const element = el;
+
+  console.log(el);
   return (
     <>
       <section>
@@ -12,7 +16,12 @@ export default function CategoryContainer({ categorias }) {
           <h1>Tienda.</h1>
         </div>
         <div className="container">
-          <ItemList productos={categories} />
+          {/* {categories.map((el) => (
+            <>
+              <ItemList category={categories} />
+            </>
+          ))}
+          <ItemList productos={categories} /> */}
         </div>
       </section>
     </>
