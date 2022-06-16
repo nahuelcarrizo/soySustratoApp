@@ -7,22 +7,19 @@ export default function CategoriesNav() {
   const prods = productosData;
   const categories = prods.map((el) => el.categoria);
   const uniqueCategories = Array.from(new Set(categories));
-  console.log(uniqueCategories);
+
   return (
     <>
-      <div className="container">
+      <div className="d-flex justify-content-center pt-4">
         <nav className="nav">
           {uniqueCategories.map((el) => (
-            <button onClick={() => console.log(el)}>
-              <Link
-                className="nav-item"
-                key={el}
-                to={`/CategoryContainer/${uniqueCategories.indexOf(
-                  el
-                )}categoria`}
-              />
+            <Link
+              className="nav-item nav-link ms-3 me-3 text-black"
+              key={el}
+              to={`/CategoryContainer/${el}`}
+            >
               {el}
-            </button>
+            </Link>
           ))}
         </nav>
       </div>

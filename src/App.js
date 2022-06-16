@@ -14,6 +14,7 @@ function App() {
         <CategoriesNav />
         <Routes>
           <Route
+            exact
             path="/CategoryContainer/:categoria"
             element={<CategoryContainer />}
           />

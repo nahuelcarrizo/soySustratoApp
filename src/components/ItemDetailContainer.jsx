@@ -1,28 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import productosData from "../json/productosData.json";
 
 export default function ItemDetailContainer() {
-  /* const [detailOpen, setDetailOpen] = useState([]);
-
-  const prods = productosData;
-
-  const { id } = useParams();
-
-  const getElementId = () => {
-    return id;
-  };
-
-  useEffect(() => {
-    const data = async () => {
-      const item = await getElementId;
-
-      setDetailOpen(item);
-    };
-    data([]);
-  }, []); */
-
   const [itemInfoOk, setItemInfoOk] = useState([]);
 
   const { id } = useParams();
