@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import React from "react";
-import logo from "../public/imgs/productos/soysustrato-logoblanco.png";
+import logo from "./soysustrato-logoblanco.png";
 
 function NavBar() {
   return (

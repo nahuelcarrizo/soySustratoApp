@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 
-export default function ItemList({ productos, detalles }) {
+export default function ItemList({ productos }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isOk, setIsOk] = useState([]);
 
@@ -37,7 +37,6 @@ export default function ItemList({ productos, detalles }) {
             img={item.img}
             descripcion={item.descripcion}
             categoria={item.categoria}
-            detalle={detalles}
           />
         ))}
     </div>

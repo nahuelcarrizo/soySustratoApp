@@ -38,7 +38,7 @@ export default function ItemDetailContainer() {
     getElement
       .then((item) => setItemInfoOk(item))
       .catch(() => {
-        console.log("algo falló");
+        <h5>Falló la carga.</h5>;
       });
   }, []);
 
