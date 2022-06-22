@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import productosData from "../json/productosData.json";
 
 export default function ItemDetailContainer() {
   const [itemInfoOk, setItemInfoOk] = useState([]);
 
   const { id } = useParams();
-  const item = id;
-
+  //aca poner un find con el id y quedarme con el {}. Guardarlo en el estado y pasar el estado por props a itemdetail.jsx
+  const item = productosData.find((el) => el.id == id);
+  console.log(item);
+  /*   const item = id;
+   */
   useEffect(() => {
     const getElement = new Promise((res, rej) => {
       setTimeout(() => {
@@ -24,7 +28,7 @@ export default function ItemDetailContainer() {
 
   return (
     <div>
-      <ItemDetail idItem={itemInfoOk} />
+      <ItemDetail itemReq={itemInfoOk} />
     </div>
   );
 }

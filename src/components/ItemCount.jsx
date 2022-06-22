@@ -1,39 +1,38 @@
 import React, { useEffect, useState } from "react";
 
 export default function ItemCount({ stock, initial, onAdd }) {
-  const [cont, setCont] = useState(initial);
+  const [cant, setCant] = useState(initial);
   const [sStock, setsStock] = useState(false);
 
+  //no deberia tener estados. El estado no maneja itemDetail. Este solo recibe.
   useEffect(() => {
-    if (cont > stock) {
-      setCont(stock);
+    if (cant > stock) {
+      setCant(stock);
       setsStock(true);
-    } else if (cont < stock) {
+    } else if (cant < stock) {
       setsStock(false);
     }
-  }, [cont]);
+  }, [cant]);
 
   return (
     <>
-      <div
-        className="row justify-content-center p-4 align-self-end"
-        id="itemCountContainer"
-      >
+      <div className="row justify-content-center p-4" id="itemCountContainer">
         <div className="row m-auto position-relative">
           <div className="row m-0 bg-white" id="buttonCount">
             <button
               className="col-4 bg-white"
               onClick={() => {
-                setCont(cont - 1);
+                setCant(cant - 1);
+                setsStock(false);
               }}
             >
               -
             </button>
-            <p className="col-4 text-center m-0">{cont}</p>
+            <p className="col-4 text-center m-0">{cant}</p>
             <button
               className="col-4 bg-white"
               onClick={() => {
-                setCont(cont + 1);
+                initial < stock ? setCant(cant + 1) : setsStock(true);
               }}
             >
               +
@@ -50,7 +49,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
         <div className="row m-auto">
           <button
             className="btn btn-outline-primary mt-3"
-            onClick={() => onAdd()}
+            onClick={() => onAdd(cant)}
           >
             Agregar al carrito
           </button>

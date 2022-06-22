@@ -3,7 +3,7 @@ import ItemCount from "./ItemCount";
 import "./item.css";
 import { Link } from "react-router-dom";
 
-export default function Item({ id, nombre, precio, img, categoria }) {
+export default function Item({ id, nombre, precio, img, categoria, stock }) {
   return (
     <>
       <div className="col-lg-3 col-12 border m-4 p-3 d-flex flex-column justify-content-between">
@@ -18,7 +18,7 @@ export default function Item({ id, nombre, precio, img, categoria }) {
         </div>
 
         <ItemCount
-          stock={10}
+          stock={stock}
           initial={1}
           onAdd={() => console.log("Agregado al carrito!")}
         />
