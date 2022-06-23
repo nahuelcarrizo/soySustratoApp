@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import Cart from "./Cart";
 
-export default function ItemCount({ stock, initial, onAdd }) {
+export default function ItemCount({ stock, initial, addCant }) {
   const [cant, setCant] = useState(initial);
   const [sStock, setsStock] = useState(false);
+  const [toCart, setToCart] = useState(false);
 
-  //no deberia tener estados. El estado no maneja itemDetail. Este solo recibe.
   useEffect(() => {
     if (cant > stock) {
       setCant(stock);
       setsStock(true);
     } else if (cant < stock) {
       setsStock(false);
+      setCant(cant);
     }
   }, [cant]);
 
@@ -47,12 +50,23 @@ export default function ItemCount({ stock, initial, onAdd }) {
           )}
         </div>
         <div className="row m-auto">
-          <button
-            className="btn btn-outline-primary mt-3"
-            onClick={() => onAdd(cant)}
-          >
-            Agregar al carrito
-          </button>
+          {!toCart ? (
+            <>
+              <button
+                className="btn btn-outline-primary mt-3"
+                onClick={() => {
+                  addCant(cant);
+                  setToCart(true);
+                }}
+              >
+                agregar al carrito
+              </button>
+            </>
+          ) : (
+            <Link className="btn btn-success mt-3" to={"/Cart"}>
+              Finalizar Compra
+            </Link>
+          )}
         </div>
       </div>
     </>

@@ -9,7 +9,7 @@ export default function ItemDetailContainer() {
   const { id } = useParams();
   //aca poner un find con el id y quedarme con el {}. Guardarlo en el estado y pasar el estado por props a itemdetail.jsx
   const item = productosData.find((el) => el.id == id);
-  console.log(item);
+
   /*   const item = id;
    */
   useEffect(() => {

@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import productosData from "../json/productosData.json";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import { MiContexto } from "../context/CartContext";
 
 export default function ItemDetail({ itemReq }) {
-  const [cantReq, setCantReq] = useState();
-  function onAdd(cant) {
-    setCantReq(cant);
+  /*   console.log(itemReq); // []
+   */
+
+  const { addItem } = useContext(MiContexto);
+  function addCant(cant) {
+    addItem(cant, itemReq);
   }
-  console.log(cantReq);
+
   return (
     <>
       <div className="d-flex flex-row mt-5 ms-5">
@@ -19,15 +23,14 @@ export default function ItemDetail({ itemReq }) {
           <h3>{itemReq.nombre}</h3>
           <span>{itemReq.precio}</span>
           <p>{itemReq.descripcion}</p>
-          {cantReq ? (
+          {/* {cantReq ? (
             <>
               <Link to={`/Cart`}>Finalizar Compra</Link>
             </>
-          ) : (
-            <div className="w-50">
-              <ItemCount stock={itemReq.stock} initial={1} onAdd={onAdd} />
-            </div>
-          )}
+          ) : ( */}
+          <div className="w-50">
+            <ItemCount stock={itemReq.stock} initial={1} addCant={addCant} />
+          </div>
         </div>
       </div>
     </>
