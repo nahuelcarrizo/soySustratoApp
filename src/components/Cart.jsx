@@ -3,10 +3,15 @@ import { useContext } from "react";
 import CartItem from "./CartItem";
 
 export default function Cart() {
-  const { cart } = useContext(MiContexto);
+  const { cart, clearCart } = useContext(MiContexto);
 
   return (
     <div className="row justify-content-center">
+      <div className="m-auto d-flex">
+        <button className="btn btn-danger m-auto" onClick={() => clearCart()}>
+          Vaciar Carrito
+        </button>
+      </div>
       {cart.length != 0 ? (
         cart.map((item) => (
           <CartItem

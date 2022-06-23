@@ -64,7 +64,7 @@ export default function ItemCount({ stock, initial, addCant }) {
             </>
           ) : (
             <Link className="btn btn-success mt-3" to={"/Cart"}>
-              Finalizar Compra
+              Ir al carrito
             </Link>
           )}
         </div>

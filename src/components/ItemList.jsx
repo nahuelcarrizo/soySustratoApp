@@ -26,18 +26,7 @@ export default function ItemList({ productos }) {
   return (
     <div className="row justify-content-center">
       {isLoading && <h1>Cargando</h1>}
-      {isOk &&
-        isOk.map((item) => (
-          <Item
-            key={item.id}
-            id={item.id}
-            nombre={item.nombre}
-            precio={item.precio}
-            img={item.img}
-            descripcion={item.descripcion}
-            categoria={item.categoria}
-          />
-        ))}
+      {isOk && isOk.map((item) => <Item key={item.id} item={item} />)}
     </div>
   );
 }

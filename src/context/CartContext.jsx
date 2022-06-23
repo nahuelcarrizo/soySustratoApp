@@ -27,14 +27,16 @@ export default function CartContext({ children }) {
     setCart(onCart);
   };
 
-  console.log(cart);
+  const clearCart = () => {
+    setCart([]);
+  };
 
   /* function removeItem(itemId) // Remover un item del cart por usando su id
   function clear() // Remover todos los items
   function isInCart: (id) => i | -1  */
 
   return (
-    <MiContexto.Provider value={{ addItem, cart, removeItem }}>
+    <MiContexto.Provider value={{ addItem, cart, removeItem, clearCart }}>
       {children}
     </MiContexto.Provider>
   );
