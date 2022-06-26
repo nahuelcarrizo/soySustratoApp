@@ -18,10 +18,11 @@ export default function Cart() {
             key={item.producto.id}
             id={item.producto.id}
             nombre={item.producto.nombre}
-            precio={item.producto.precio}
+            costo={item.producto.costo}
             img={item.producto.img}
             descripcion={item.producto.descripcion}
             categoria={item.producto.categoria}
+            cantidad={item.cantidad}
           />
         ))
       ) : (

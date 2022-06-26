@@ -30,6 +30,7 @@ export default function CartContext({ children }) {
     setCart([]);
   };
 
+  console.log(cart);
   /* function removeItem(itemId) // Remover un item del cart por usando su id
   function clear() // Remover todos los items
   function isInCart: (id) => i | -1  */

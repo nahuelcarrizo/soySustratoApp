@@ -5,10 +5,10 @@ import { MiContexto } from "../context/CartContext";
 export default function CartItem({
   id,
   nombre,
-  precio,
+  costo,
   img,
   categoria,
-  stock,
+  cantidad,
 }) {
   const { removeItem } = useContext(MiContexto);
   return (
@@ -18,7 +18,9 @@ export default function CartItem({
         <small className="text-muted">{categoria}</small>
         <div className="itemBody">
           <h3>{nombre}</h3>
-          <span>{precio}</span>
+          <span>Cantidad: {cantidad}</span>
+          <br />
+          <span>Subtotal: ${costo * cantidad}</span>
           <br />
 
           <Link to={`/ItemDetailContainer/${id}`}>+ Info del producto</Link>
