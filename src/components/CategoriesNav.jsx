@@ -12,13 +12,13 @@ export default function CategoriesNav() {
     <>
       <div className="d-flex justify-content-center pt-4">
         <nav className="nav">
-          {uniqueCategories.map((el) => (
+          {uniqueCategories.map((categoryId) => (
             <Link
               className="nav-item nav-link ms-3 me-3 text-black"
-              key={el}
-              to={`/CategoryContainer/${el}`}
+              key={categoryId}
+              to={`/ItemListContainer/${categoryId}`}
             >
-              {el}
+              {categoryId}
             </Link>
           ))}
         </nav>

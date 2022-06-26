@@ -1,6 +1,5 @@
 //@ts-check
 
-import { logDOM } from "@testing-library/react";
 import { createContext, useState } from "react";
 
 export const MiContexto = createContext({});

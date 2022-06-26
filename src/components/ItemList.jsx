@@ -4,6 +4,8 @@ import Item from "./Item";
 export default function ItemList({ productos }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isOk, setIsOk] = useState([]);
+
+  console.log(" se renderiza ItemList");
   useEffect(() => {
     const respOk = new Promise((res, rej) => {
       setTimeout(() => {
@@ -21,7 +23,7 @@ export default function ItemList({ productos }) {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [productos]);
 
   return (
     <div className="row justify-content-center">

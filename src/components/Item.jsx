@@ -4,9 +4,7 @@ import "./item.css";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../context/CartContext";
 
-export default function Item({
-  item /* id, nombre, precio, img, categoria, stock */,
-}) {
+export default function Item({ item }) {
   const { addItem } = useContext(MiContexto);
   const addCant = (cant) => {
     addItem(cant, item);

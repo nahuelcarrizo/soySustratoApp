@@ -25,6 +25,10 @@ export default function App() {
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/ItemListContainer" element={<ItemListContainer />} />
             <Route
+              path="/ItemListContainer/:categoryId"
+              element={<ItemListContainer />}
+            />
+            <Route
               path="/ItemDetailContainer/:id"
               element={<ItemDetailContainer />}
             />
