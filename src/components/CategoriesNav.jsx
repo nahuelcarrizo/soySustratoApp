@@ -11,10 +11,10 @@ export default function CategoriesNav() {
   return (
     <>
       <div className="d-flex justify-content-center pt-4">
-        <nav className="nav">
+        <nav>
           {uniqueCategories.map((categoryId) => (
             <Link
-              className="nav-item nav-link ms-3 me-3 text-black"
+              className="m-1 categories-nav"
               key={categoryId}
               to={`/ItemListContainer/${categoryId}`}
             >
