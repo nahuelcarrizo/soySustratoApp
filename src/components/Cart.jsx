@@ -27,7 +27,9 @@ export default function Cart() {
         ))
       ) : (
         <>
-          <p>Carrito Vacio</p>
+          <Link to={"/ItemListContainer"}>
+            No tiene elementos en el Carrito. Volver a la tienda
+          </Link>
         </>
       )}
     </div>
