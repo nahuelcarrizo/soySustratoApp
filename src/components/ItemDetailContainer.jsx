@@ -1,31 +1,26 @@
-import React, { useState, useEffect } from "react";
-import ItemDetail from "./ItemDetail";
+import { doc, getFirestore, getDoc } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import productosData from "../json/productosData.json";
+import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer() {
-  const [itemInfoOk, setItemInfoOk] = useState([]);
-
+  const [itemInfoOk, setItemInfoOk] = useState({});
+  const db = getFirestore();
   const { id } = useParams();
-  //aca poner un find con el id y quedarme con el {}. Guardarlo en el estado y pasar el estado por props a itemdetail.jsx
-  const item = productosData.find((el) => el.id == id);
+  /*   const item = productosData.find((el) => el.id == id); */
 
   /*   const item = id;
    */
+  const item = doc(db, "productos", id);
   useEffect(() => {
-    const getElement = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(item);
-      }, 2000);
+    const item = doc(db, "productos", id);
+
+    getDoc(item).then((res) => {
+      setItemInfoOk(res.data());
     });
-
-    getElement
-      .then((item) => setItemInfoOk(item))
-      .catch(() => {
-        <h5>Falló la carga.</h5>;
-      });
   }, []);
-
+  console.log(id);
+  console.log(itemInfoOk);
   return (
     <div>
       <ItemDetail itemReq={itemInfoOk} />

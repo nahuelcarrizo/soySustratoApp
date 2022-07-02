@@ -22,6 +22,7 @@ export default function ItemListContainer() {
       );
       getDocs(prodCollection).then((res) => {
         setProducts(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        console.log(res.docs);
       });
     }
   }, [categoryId]);
