@@ -1,7 +1,9 @@
 nav {
   height: 10vh;
 }
-
+body {
+  background-color: #e8e8e8 !important;
+}
 button {
   border: none;
   color: blue;

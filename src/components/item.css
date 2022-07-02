@@ -14,3 +14,9 @@
 .itemImg {
   max-width: 100%;
 }
+
+.item-all {
+  border-radius: 17px;
+  background: #e3e4e5;
+  box-shadow: 5px 5px 10px #d1d2d3, -5px -5px 10px #f5f6f7;
+}

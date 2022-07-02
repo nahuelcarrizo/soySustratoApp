@@ -1,12 +1,9 @@
-import React, { useState, useContext } from "react";
-import productosData from "../json/productosData.json";
-import ItemCount from "./ItemCount";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { MiContexto } from "../context/CartContext";
+import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ itemReq }) {
-  /*   console.log(itemReq); // []
-   */
+  console.log(itemReq); // []
 
   const { addItem } = useContext(MiContexto);
   function addCant(cant) {

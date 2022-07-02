@@ -1,6 +1,7 @@
 import { MiContexto } from "../context/CartContext";
 import { useContext } from "react";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { cart, clearCart } = useContext(MiContexto);

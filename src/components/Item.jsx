@@ -11,7 +11,8 @@ export default function Item({ item }) {
   };
   return (
     <>
-      <div className="col-lg-3 col-12 border m-4 p-3 d-flex flex-column justify-content-between">
+      <div className="item-all col-lg-3 col-12 border m-4 p-1 d-flex flex-column justify-content-between">
+        <div className=""></div>
         <img className="itemImg" src={item.img} alt="Card image cap" />
         <small className="text-muted">{item.categoria}</small>
         <div className="itemBody">

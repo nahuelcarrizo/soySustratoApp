@@ -1,38 +1,59 @@
-import { useState, useEffect } from "react";
-import ItemList from "./ItemList";
-import productosData from "../json/productosData.json";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
 
 export default function ItemListContainer() {
-  let prods = productosData;
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
+  const db = getFirestore();
 
   useEffect(() => {
-    const getProductsByCategory = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(prods.filter((el) => el.categoria === categoryId));
-      }, 200);
-    });
-
-    getProductsByCategory
-      .then((productos) => {
-        setProducts(productos);
-      })
-      .catch(() => {
-        console.log("falló");
+    if (categoryId !== undefined) {
+      const prodCollection = query(
+        collection(db, "productos"),
+        where("categoria", "==", categoryId)
+      );
+      getDocs(prodCollection).then((res) => {
+        setProducts(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       });
+    }
   }, [categoryId]);
+
+  useEffect(() => {
+    if (categoryId == undefined) {
+      const prodCollection = collection(db, "productos");
+      getDocs(prodCollection).then((res) => {
+        setProducts(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      });
+    }
+  });
+
+  /*   useEffect(() => {
+    const prodQueryCollection = query(
+      collection(db, "productos"),
+      where("categoria", "==", "Vajilla Desechable")
+    );
+    getDocs(prodQueryCollection).then((res) => {
+      let prds = res.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProducts(prds);
+    });
+    getDocs().catch(() => {
+      console.log("falló prodQueryCollection");
+    });
+  }, [categoryId]); */
 
   return (
     <>
       <section>
         <div className="container">
-          {categoryId !== undefined ? (
-            <ItemList productos={products} />
-          ) : (
-            <ItemList productos={prods} />
-          )}
+          <ItemList productos={products} />
         </div>
       </section>
     </>

@@ -5,8 +5,6 @@ export default function ItemList({ productos }) {
   const [isLoading, setIsLoading] = useState(true);
   const [isOk, setIsOk] = useState([]);
 
-  console.log("se renderiza ItemList");
-
   useEffect(() => {
     const respOk = new Promise((res, rej) => {
       setTimeout(() => {

@@ -7,7 +7,7 @@ export default function CartWidget() {
   const { cart } = useContext(MiContexto);
 
   const totalQuant = cart.reduce((prev, curr) => prev + curr.cantidad, 0);
-  console.log(totalQuant);
+
   return (
     <div>
       <Link className="text-white me-4" to={"/Cart"}>

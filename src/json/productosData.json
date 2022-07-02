@@ -6,7 +6,7 @@
     "precio": "$ 64.265",
     "stock": "10",
     "nombre": "DOYPACK E 30x39x10cm | PACK 1000un.",
-    "categoria": "Sobres Y Doypack",
+    "categoria": "Sobres y Doypack",
     "descripcion": "Doypack E de 30x39x10cm, de papel, que otorga estructura, y bioplástico, que imperbealiza. La bominación de materiales permite que después del uso el amterial pueda, en un medio de compost, degradarse en 180 días. El material es termosellable y apto para freezer y líquidos.",
     "img": "/imgs/productos/doypack1000un.png"
   },
@@ -17,19 +17,19 @@
     "precio": "$ 7.905",
     "stock": "10",
     "nombre": "DOYPACK E 30x39x10cm | PACK 100un.",
-    "categoria": "Sobres Y Doypack",
+    "categoria": "Sobres y Doypack",
     "descripcion": "Doypack E de 30x39x10cm, de papel, que otorga estructura, y bioplástico, que imperbealiza. La bominación de materiales permite que después del uso el amterial pueda, en un medio de compost, degradarse en 180 días. El material es termosellable y apto para freezer y líquidos.",
     "img": "/imgs/productos/doypack100un.png"
   },
-
   {
     "id": 2,
-    "clase": 1,
+    "clase": 2,
     "costo": 28750,
+    "tamaño": "XS",
     "precio": "$ 28.750",
     "stock": "10",
     "nombre": "SOBRE XS 10x14cm | PACK 1000un",
-    "categoria": "Sobres Y Doypack",
+    "categoria": "Sobres y Doypack",
     "descripcion": "Sobres de 10x14cm, de papel, que otorga estructura, y bioplástico, que imperbealiza. La combinación de materiales permite que despueés del uso el material pueda, en un medio de compost, degradarse en 180 días. El material es termosellable y apto para freezer y liquídos.",
     "img": "/imgs/productos/sobrepack1000un.jpeg"
   },
@@ -40,7 +40,7 @@
     "precio": "$ 3.593",
     "stock": "10",
     "nombre": "SOBRE XS 10x14cm | PACK 100un",
-    "categoria": "Sobres Y Doypack",
+    "categoria": "Sobres y Doypack",
     "descripcion": "Sobres de 10x14cm, de papel, que otorga estructura, y bioplástico, que imperbealiza. La combinación de materiales permite que despueés del uso el material pueda, en un medio de compost, degradarse en 180 días. El material es termosellable y apto para freezer y liquídos.",
     "img": "/imgs/productos/sobrepack100un.jpeg"
   },
