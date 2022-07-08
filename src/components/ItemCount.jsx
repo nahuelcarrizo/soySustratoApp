@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Cart from "./Cart";
 
 export default function ItemCount({ stock, initial, addCant }) {
   const [cant, setCant] = useState(initial);
+  const [subt, setSubt] = useState(0);
   const [sStock, setsStock] = useState(false);
   const [toCart, setToCart] = useState(false);
 

@@ -9,14 +9,18 @@ export default function CartContext({ children }) {
   const onCartId = cart.map((el) => el.producto.id);
   const onCart = [...cart];
 
-  const addItem = (cant, itemReq) => {
+  const addItem = (cant, itemReq, subt) => {
     const indexed = onCartId.findIndex((id) => id == itemReq.id);
     const isOnCart = () => {
       onCart[indexed].cantidad += cant;
+      onCart[indexed].subtotal += subt;
       setCart(onCart);
     };
     indexed === -1
-      ? setCart([...cart, { cantidad: cant, producto: itemReq }])
+      ? setCart([
+          ...cart,
+          { cantidad: cant, producto: itemReq, subtotal: subt },
+        ])
       : isOnCart();
   };
 

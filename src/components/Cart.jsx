@@ -12,6 +12,9 @@ export default function Cart() {
         <button className="btn btn-danger m-auto" onClick={() => clearCart()}>
           Vaciar Carrito
         </button>
+        <Link className="btn btn-succes m-auto" to={"/CheckOut"}>
+          Finalizar compra
+        </Link>
       </div>
       {cart.length != 0 ? (
         cart.map((item) => (

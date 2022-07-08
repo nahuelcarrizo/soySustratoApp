@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import logo from "./soysustrato-logoblanco.png";
+import UserWidget from "./UserWidget";
+import logo from "../soysustrato-logonegro.png";
+import NavItem from "./NavItem";
+import { ReactComponent as CartIcon } from "../../icons/cart.svg";
+import { ReactComponent as UserIcon } from "../../icons/user.svg";
+import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-light d-flex ">
       <Link className="navbar-brand ms-4" to={`/ItemListContainer`}>
         <img src={logo} width="110" height="35" alt="logo de soy sustrato" />
       </Link>
       <div className="collapse navbar-collapse">
+        <form>
+          <input type="text" name="search" />
+        </form>
         <ul className="navbar-nav mx-auto">
           <li className="nav-item">
             <Link className="nav-link" to={`/ItemListContainer`}>
@@ -27,12 +35,12 @@ function NavBar() {
           </li>
         </ul>
       </div>
-      <form className="form-inline me-4">
-        <button className="btn btn-light" type="button">
-          Login
-        </button>
-      </form>
-      <CartWidget />
+      <UserWidget icon={<UserIcon />}>
+        <DropdownMenu />
+      </UserWidget>
+      <CartWidget icon={<CartIcon />}>
+        <DropdownMenu />
+      </CartWidget>
     </nav>
   );
 }

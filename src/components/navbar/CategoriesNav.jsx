@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-import productosData from "../json/productosData.json";
+import productosData from "../../json/productosData.json";
 
 export default function CategoriesNav() {
   const prods = productosData;

@@ -6,25 +6,27 @@ import { MiContexto } from "../context/CartContext";
 
 export default function Item({ item }) {
   const { addItem } = useContext(MiContexto);
+  const costoItem = item.costo;
+
   const addCant = (cant) => {
-    addItem(cant, item);
+    const subt = costoItem * cant;
+    addItem(cant, item, subt);
   };
   return (
     <>
-      <div className="item-all col-lg-3 col-12 border m-4 p-1 d-flex flex-column justify-content-between">
+      <div className="item-all col-lg-3 col-12 border m-4 d-flex flex-column justify-content-between">
         <div className=""></div>
         <img className="itemImg" src={item.img} alt="Card image cap" />
         <small className="text-muted">{item.categoria}</small>
         <div className="itemBody">
           <h3>{item.nombre}</h3>
-          <span>{item.precio}</span>
+          <span>$ {item.precio}</span>
           <br />
 
           <Link to={`/ItemDetailContainer/${item.id}`}>
             + Info del producto
           </Link>
         </div>
-
         <ItemCount stock={item.stock} initial={1} addCant={addCant} />
       </div>
     </>

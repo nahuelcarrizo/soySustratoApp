@@ -1,13 +1,14 @@
 //@ts-check
-import ItemListContainer from "./components/ItemListContainer";
-import NavBar from "./components/NavBar";
-import "./App.css";
-import ItemDetailContainer from "./components/ItemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CategoriesNav from "./components/CategoriesNav.jsx";
-import CartContext from "./context/CartContext";
-import Cart from "./components/Cart";
 import { initializeApp } from "firebase/app";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer";
+import CategoriesNav from "./components/navbar/CategoriesNav.jsx";
+import NavBar from "./components/navbar/NavBar";
+import CartContext from "./context/CartContext";
+import UserLogin from "./components/UserLogin";
+import CheckOut from "./components/checkout/CheckOut";
 
 export default function App() {
   initializeApp({
@@ -36,6 +37,8 @@ export default function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/Cart" element={<Cart />} />
+            <Route path="/UserLogin" element={<UserLogin />} />
+            <Route path="/Checkout" element={<CheckOut />} />
           </Routes>
         </BrowserRouter>
       </CartContext>

@@ -1,15 +1,32 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./CartWidget.css";
 import { Link } from "react-router-dom";
-import { MiContexto } from "../context/CartContext";
+import { MiContexto } from "../../context/CartContext";
 
-export default function CartWidget() {
+export default function CartWidget({ icon, children }) {
   const { cart } = useContext(MiContexto);
-
+  const [open, setOpen] = useState(false);
   const totalQuant = cart.reduce((prev, curr) => prev + curr.cantidad, 0);
 
   return (
-    <div>
+    <>
+      <li className="nav-item">
+        <Link
+          className="icon-button"
+          href="#"
+          to={"/Cart"}
+          onClick={() => setOpen(!open)}
+        >
+          {icon}
+        </Link>
+        <span id="carritoNumero" className="badge rounded-circle">
+          {totalQuant}
+        </span>
+
+        {open && children}
+      </li>
+
+      {/* <div>
       <Link className="text-white me-4" to={"/Cart"}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +42,8 @@ export default function CartWidget() {
           {totalQuant}
         </span>
       </Link>
-    </div>
+    </div> */}
+    </>
   );
 }
 

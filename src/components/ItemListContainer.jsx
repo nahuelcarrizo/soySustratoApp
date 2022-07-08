@@ -8,12 +8,14 @@ import {
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import productosData from "../json/productosData.json";
 
 export default function ItemListContainer() {
   const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
-  const db = getFirestore();
 
+  //With Firebase
+  const db = getFirestore();
   useEffect(() => {
     if (categoryId !== undefined) {
       const prodCollection = query(
@@ -22,7 +24,6 @@ export default function ItemListContainer() {
       );
       getDocs(prodCollection).then((res) => {
         setProducts(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-        console.log(res.docs);
       });
     }
   }, [categoryId]);
@@ -34,21 +35,33 @@ export default function ItemListContainer() {
         setProducts(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       });
     }
-  });
+  }, []);
 
-  /*   useEffect(() => {
-    const prodQueryCollection = query(
-      collection(db, "productos"),
-      where("categoria", "==", "Vajilla Desechable")
-    );
-    getDocs(prodQueryCollection).then((res) => {
-      let prds = res.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      setProducts(prds);
+  //With JSON
+
+  /*  const prods = productosData;
+
+  useEffect(() => {
+    const prom = new Promise((resolve, reject) => {
+      resolve(prods);
     });
-    getDocs().catch(() => {
-      console.log("falló prodQueryCollection");
+
+    prom.then((r) => {
+      setProducts(r);
     });
-  }, [categoryId]); */
+    console.log(prods);
+  }, []);
+
+  useEffect(() => {
+    const prd = prods.filter((el) => el.categoria == categoryId);
+    const prom = new Promise((resolve, reject) => {
+      resolve(prd);
+    });
+
+    prom.then((r) => {
+      setProducts(r);
+    }); */
+  /* }, [categoryId]); */
 
   return (
     <>
