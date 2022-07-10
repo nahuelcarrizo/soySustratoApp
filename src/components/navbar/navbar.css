@@ -45,6 +45,7 @@
   align-items: center;
   justify-content: center;
   transition: filter 300ms;
+  cursor: pointer;
 }
 
 .icon-button:hover {
@@ -59,16 +60,52 @@
 
 .nav-dropdown {
   position: absolute;
-  top: 58px;
-  width: 500px;
+  top: 55px;
+  width: auto;
+  height: auto;
   transform: translateX(-45%);
   background-color: var(--bg);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  padding: 1rem;
   overflow: hidden;
+  box-shadow: 1px 0px 5px #b9bcc1, -4px -4px 15px rgba(255, 255, 255, 0.05);
 }
 
+.nav-dropdown > div {
+  width: 300px;
+  height: 320px;
+}
+
+.dropdown-line {
+  /*   margin: 10px 0 20px;
+ */
+  height: 1px;
+  background: #ededed;
+  margin: 10px 25px 0;
+}
+
+.nav-dropdown a {
+  font-size: 0.8rem;
+  color: #5d8a2d;
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav-dropdown font {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form div:first-child {
+  margin: 25px 25px 0;
+}
+
+.nav-dropdown label {
+  font-weight: 500;
+  color: #5f5f5f;
+  font-size: 0.95rem;
+}
+.nav-dropdown h1 {
+  margin: 15px 25px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
 .nav-menu-item {
   height: 50px;
   display: flex;
@@ -84,10 +121,6 @@
 
 .icon-right {
   margin-left: auto;
-}
-
-.menu {
-  width: 100%;
 }
 
 .menu-primary-enter {

@@ -3,20 +3,36 @@
 }
 
 .itemBody span {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: green;
   font-weight: bold;
 }
 
-.itemBody {
-  font-size: 0.8rem;
+.itemBody a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.itemBody h3 {
+  line-height: 1.1rem;
 }
 .itemImg {
   max-width: 100%;
+  border-radius: 5px;
+}
+.img-detail {
+  border-radius: 17px;
 }
 
 .item-all {
-  border-radius: 17px;
-  background: #e3e4e5;
-  box-shadow: 5px 5px 10px #d1d2d3, -5px -5px 10px #f5f6f7;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 7px 15px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#buttonCount svg {
+  height: 50%;
 }

@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget";
-import UserWidget from "./UserWidget";
-import logo from "../soysustrato-logonegro.png";
-import NavItem from "./NavItem";
 import { ReactComponent as CartIcon } from "../../icons/cart.svg";
 import { ReactComponent as UserIcon } from "../../icons/user.svg";
-import DropdownMenu from "./dropdownMenu/DropdownMenu";
+import logo from "../soysustrato-logonegro.png";
+import CartWidget from "./cart/CartWidget";
+import UserWidget from "./UserWidget";
 
 function NavBar() {
   return (
@@ -35,12 +33,8 @@ function NavBar() {
           </li>
         </ul>
       </div>
-      <UserWidget icon={<UserIcon />}>
-        <DropdownMenu />
-      </UserWidget>
-      <CartWidget icon={<CartIcon />}>
-        <DropdownMenu />
-      </CartWidget>
+      <UserWidget icon={<UserIcon />} />
+      <CartWidget icon={<CartIcon />} />
     </nav>
   );
 }

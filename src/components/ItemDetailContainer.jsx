@@ -19,8 +19,7 @@ export default function ItemDetailContainer() {
       setItemInfoOk(res.data());
     });
   }, []);
-  console.log(id);
-  console.log(itemInfoOk);
+
   return (
     <div>
       <ItemDetail itemReq={itemInfoOk} />

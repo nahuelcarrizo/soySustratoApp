@@ -13,7 +13,11 @@ export default function ItemDetail({ itemReq }) {
   return (
     <>
       <div className="d-flex flex-row mt-5 ms-5">
-        <img className="itemImg w-25" src={itemReq.img} alt="Card image cap" />
+        <img
+          className="itemImg img-detail w-25"
+          src={itemReq.img}
+          alt="Card image cap"
+        />
 
         <div className="itemBody ps-5 d-flex flex-column justify-content-start">
           <small className="text-muted">{itemReq.categoria}</small>

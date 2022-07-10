@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as ChevronUp } from "../icons/ChevronUp.svg";
+import { ReactComponent as ChevronDown } from "../icons/ChevronDown.svg";
 
 export default function ItemCount({ stock, initial, addCant }) {
   const [cant, setCant] = useState(initial);
@@ -19,53 +21,50 @@ export default function ItemCount({ stock, initial, addCant }) {
 
   return (
     <>
-      <div className="row justify-content-center p-4" id="itemCountContainer">
-        <div className="row m-auto position-relative">
-          <div className="row m-0 bg-white" id="buttonCount">
-            <button
-              className="col-4 bg-white"
-              onClick={() => {
-                setCant(cant - 1);
-                setsStock(false);
-              }}
-            >
-              -
-            </button>
-            <p className="col-4 text-center m-0">{cant}</p>
-            <button
-              className="col-4 bg-white"
-              onClick={() => {
-                initial < stock ? setCant(cant + 1) : setsStock(true);
-              }}
-            >
-              +
-            </button>
-          </div>
+      <div className="d-flex flex-row justify-content-center align-items-stretch pt-3">
+        <div
+          className="d-flex flex-column align-items-start bg-white"
+          id="buttonCount"
+        >
+          <button
+            className="bg-white border-0 text-dark w-50 h-50"
+            onClick={() => {
+              initial < stock ? setCant(cant + 1) : setsStock(true);
+            }}
+          >
+            <ChevronUp />
+          </button>
+          <input
+            type="text"
+            defaultValue={cant}
+            className="w-50 h-50 text-center border-0"
+          />
+          <button
+            className="bg-white border-0 text-dark w-50"
+            onClick={() => {
+              setCant(cant - 1);
+              setsStock(false);
+            }}
+          >
+            <ChevronDown />
+          </button>
+        </div>
+        <div className="flex-shrink-0 d-flex align-items-center">
+          <button
+            className="btn btn-success h-75"
+            onClick={() => {
+              addCant(cant);
+              setToCart(true);
+            }}
+          >
+            agregar al carrito
+          </button>
           {sStock && (
             <>
               <p className="h7 text-danger">
                 <em>Stock agotado!</em>
               </p>
             </>
-          )}
-        </div>
-        <div className="row m-auto">
-          {!toCart ? (
-            <>
-              <button
-                className="btn btn-outline-primary mt-3"
-                onClick={() => {
-                  addCant(cant);
-                  setToCart(true);
-                }}
-              >
-                agregar al carrito
-              </button>
-            </>
-          ) : (
-            <Link className="btn btn-success mt-3" to={"/Cart"}>
-              Ir al carrito
-            </Link>
           )}
         </div>
       </div>

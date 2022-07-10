@@ -36,26 +36,7 @@ code {
 }
 
 body {
-  background-color: #e8e8e8 !important;
-}
-button {
-  border: none;
-  color: blue;
-}
-
-#buttonCount {
-  border: 1px solid #d3d3d3;
-  padding: 4px 0;
-}
-
-button + p {
-  font-weight: bold;
-}
-
-#buttonCount + p {
-  font-size: 10px;
-  position: absolute;
-  top: 35px;
+  background-color: white !important;
 }
 
 .spinner-border + p {

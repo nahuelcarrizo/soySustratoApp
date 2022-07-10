@@ -1,7 +1,7 @@
 //@ts-check
 import { initializeApp } from "firebase/app";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from "./components/Cart";
+import Cart from "./components/cart/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import CategoriesNav from "./components/navbar/CategoriesNav.jsx";

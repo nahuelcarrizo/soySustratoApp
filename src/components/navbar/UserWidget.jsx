@@ -1,15 +1,15 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import DropdownMenu from "./dropdownMenu/DropdownMenu";
 
-export default function UserWidget({ icon, children }) {
+export default function UserWidget({ icon }) {
   const [open, setOpen] = useState(false);
 
   return (
     <li className="nav-item">
-      <a className="icon-button" href="#" onClick={() => setOpen(!open)}>
+      <span className="icon-button" onClick={() => setOpen(!open)}>
         {icon}
-      </a>
-      {open && children}
+      </span>
+      {open && <DropdownMenu />}
     </li>
   );
 }

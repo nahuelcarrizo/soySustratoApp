@@ -65,8 +65,9 @@ export default function ItemListContainer() {
 
   return (
     <>
-      <section>
-        <div className="container">
+      <section className="d-flex flex-row">
+        <div className="container w-25">Filter</div>
+        <div className="container-fluid ps-5 pe-4">
           <ItemList productos={products} />
         </div>
       </section>
