@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import "./CartWidget.css";
 import { Link } from "react-router-dom";
 import { MiContexto } from "../../../context/CartContext";
+import { FaShoppingBag } from "react-icons/fa";
 
-export default function CartWidget({ icon, children }) {
+export default function CartWidget({ children }) {
   const { cart } = useContext(MiContexto);
   const totalQuant = cart.reduce((prev, curr) => prev + curr.cantidad, 0);
 
@@ -11,7 +11,7 @@ export default function CartWidget({ icon, children }) {
     <>
       <li className="nav-item">
         <Link className="icon-button" href="#" to={"/Cart"}>
-          {icon}
+          <FaShoppingBag className="text-dark h3 m-0" />
         </Link>
         <span id="carritoNumero" className="badge rounded-circle">
           {totalQuant}

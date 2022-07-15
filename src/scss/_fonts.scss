@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+//Faro family
+@font-face {
+  font-family: "Faro";
+  src: local("Faro"), url("../fonts/FaroWebTrial-BoldLucky.woff") format("woff");
+}
+@font-face {
+  font-family: "Faro Light";
+  src: local("Faro Light"),
+    url("../fonts/FaroWebTrial-LightLucky.woff") format("woff");
+}
+@font-face {
+  font-family: "Faro Variable";
+  src: local("Faro Variable"),
+    url("../fonts/FaroVariableWebTrial.woff") format("woff");
+}
+@font-face {
+  font-family: "Faro Variable 2";
+  src: local("Faro Variable 2"),
+    url("../fonts/FaroVariableWebTrial.woff2") format("woff2");
+}
+
+// Turbinaldo
+@font-face {
+  font-family: "Turbinaldo";
+  src: url("../fonts/FontsFree-Net-turbinado-bold.ttf");
+}

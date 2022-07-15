@@ -8,7 +8,6 @@ import {
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import productosData from "../json/productosData.json";
 
 export default function ItemListContainer() {
   const { categoryId } = useParams();
@@ -67,7 +66,7 @@ export default function ItemListContainer() {
     <>
       <section className="d-flex flex-row">
         <div className="container w-25">Filter</div>
-        <div className="container-fluid ps-5 pe-4">
+        <div className="container-fluid mb-4 w-75">
           <ItemList productos={products} />
         </div>
       </section>

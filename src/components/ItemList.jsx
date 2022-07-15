@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Item from "./Item";
+import Item from "./item/Item";
+import { Link } from "react-router-dom";
 
 export default function ItemList({ productos }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,11 +27,20 @@ export default function ItemList({ productos }) {
 
   return (
     <>
-      <div className="mb-5 mt-5 text-center">
-        <h1>Tienda.</h1>
-        <h2>CONOCE NUESTROS PRODUCTOS QUE SE HACEN TIERRA EN 180 DÍAS.</h2>
+      <div className="item-list mb-4 pb-3 mt-5 text-center d-flex flex-row">
+        <Link to={"/ItemListContainer"} className="me-2">
+          Home page
+        </Link>{" "}
+        /
+        <Link to={"/ItemListContainer"} className="me-2 ms-2">
+          Tienda
+        </Link>{" "}
+        /
+        <Link to={"/ItemListContainer"} className="me-2 ms-2">
+          Todos los productos
+        </Link>
       </div>
-      <div className="row justify-content-between">
+      <div className="row g-4">
         {isLoading && (
           <div className="d-flex flex-column align-items-center mt-5">
             <div
