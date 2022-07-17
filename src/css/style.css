@@ -11169,13 +11169,14 @@ header {
 .navbar-down {
   padding-top: 0.85rem;
 }
-.navbar-down a {
+.navbar-down > ul > li > a {
   font-size: 1.3rem;
   font-family: "Faro";
   color: white;
   letter-spacing: 2px;
 }
-.navbar-down a::after {
+
+.nav-underline::after {
   position: absolute;
   bottom: 0;
   left: 0;

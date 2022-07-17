@@ -45,25 +45,24 @@ header {
 }
 .navbar-down {
   padding-top: 0.85rem;
-
-  & a {
+  & > ul > li > a {
     font-size: 1.3rem;
     font-family: "Faro";
     color: white;
     letter-spacing: 2px;
-
-    &::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 0.4rem;
-      content: "";
-      width: 0;
-      transition: width 0.35s linear;
-      background: #a4d370;
-    }
   }
 }
+.nav-underline::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.4rem;
+  content: "";
+  width: 0;
+  transition: width 0.35s linear;
+  background: #a4d370;
+}
+
 .nav-categories {
   & svg {
     color: #a4d370;

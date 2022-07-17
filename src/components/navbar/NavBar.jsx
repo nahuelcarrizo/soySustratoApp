@@ -55,11 +55,15 @@ function NavBar() {
                     onMouseOver={() => setOpen(true)}
                     onMouseLeave={() => setOpen(false)}
                   >
-                    <Link className="position-relative pb-1" to={"/TestShop"}>
+                    <Link
+                      className="position-relative pb-1 nav-underline"
+                      to={"/TestShop"}
+                    >
                       CATEGORIAS
                       <GoChevronDown className="ms-1 h3" />
                     </Link>
-                    {open && <DropdownCat />}
+                    {/*   {open && <DropdownCat />} */}
+                    <DropdownCat />
                   </li>
                   <FaSearch className="text-light h4 nav-item" />
                   <UserWidget icon={<UserIcon className="h1" />} />

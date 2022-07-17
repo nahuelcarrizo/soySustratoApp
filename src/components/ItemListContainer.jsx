@@ -36,32 +36,6 @@ export default function ItemListContainer() {
     }
   }, []);
 
-  //With JSON
-
-  /*  const prods = productosData;
-
-  useEffect(() => {
-    const prom = new Promise((resolve, reject) => {
-      resolve(prods);
-    });
-
-    prom.then((r) => {
-      setProducts(r);
-    });
-    console.log(prods);
-  }, []);
-
-  useEffect(() => {
-    const prd = prods.filter((el) => el.categoria == categoryId);
-    const prom = new Promise((resolve, reject) => {
-      resolve(prd);
-    });
-
-    prom.then((r) => {
-      setProducts(r);
-    }); */
-  /* }, [categoryId]); */
-
   return (
     <>
       <section className="d-flex flex-row">
