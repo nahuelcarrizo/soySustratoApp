@@ -45,11 +45,14 @@ header {
 }
 .navbar-down {
   padding-top: 0.85rem;
-  & > ul > li > a {
+  & > ul > li a {
     font-size: 1.3rem;
     font-family: "Faro";
     color: white;
     letter-spacing: 2px;
+    & span {
+      font-size: 1rem;
+    }
   }
 }
 .nav-underline::after {
@@ -77,6 +80,11 @@ header {
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 0.4px;
   font-weight: 300;
+  & div ul li a {
+    color: white;
+    font-weight: 300;
+    font-family: "Poppins";
+  }
 }
 
 .icon-button {
@@ -94,7 +102,7 @@ header {
   cursor: pointer;
 
   & svg {
-    bottom: 1.5px;
+    bottom: 2px;
     position: relative;
   }
 }

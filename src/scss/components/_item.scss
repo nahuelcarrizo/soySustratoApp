@@ -1,43 +1,52 @@
-.itemBody{ 
+.itemBody {
   h3 {
-  font-size: 1rem;
-  line-height: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.1rem;
   }
   span {
-  font-size: 1.1rem;
-  color: green;
-  font-weight: bold;
+    font-size: 1.1rem;
+    color: green;
+    font-weight: bold;
   }
   a {
-  font-size: 1rem;
-  font-weight: 500;
+    font-size: 1rem;
+    font-weight: 500;
   }
 }
 
-
+.det-cont {
+  width: 63%;
+}
+.itemBody p {
+  font-family: "Poppins";
+  padding-top: 0.3rem;
+  font-size: 0.9rem;
+}
 .shape {
   height: 25.6rem;
-  padding-top:0;
-  background: rgba(255,255,255,.4) !important;
+  padding-top: 0;
+  background: rgba(255, 255, 255, 0.4) !important;
   border-radius: 0 12rem 0 10rem;
   position: absolute;
-  bottom:0;
-  left:0;
-  right:0;
-
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.itemImg {
-  border-radius: 5px;
+.item-img {
+  width: 18.4rem;
+  height: 16.3rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .img-detail {
   border-radius: 17px;
+  width: 20rem;
 }
 
 .item-all {
-  
   position: relative;
-  border-radius: 5px;
+  border-radius: 0 2.5rem;
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 -1px 5px rgba(0, 0, 0, 0.05);
   flex-direction: column;

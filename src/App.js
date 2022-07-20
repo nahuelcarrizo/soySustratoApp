@@ -4,13 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./components/cart/Cart";
 import ItemDetailContainer from "./components/item/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
-import CategoriesNav from "./components/navbar/CategoriesNav.jsx";
 import NavBar from "./components/navbar/NavBar";
 import CartContext from "./context/CartContext";
 import UserLogin from "./components/UserLogin";
 import CheckOut from "./components/checkout/CheckOut";
-import Test from "./components/Test";
-import TestShop from "./components/TestShop";
 
 export default function App() {
   initializeApp({
@@ -26,16 +23,10 @@ export default function App() {
       <CartContext>
         <BrowserRouter>
           <NavBar />
-          {/* <CategoriesNav /> */}
           <Routes>
-            <Route path="/Test" element={<Test />} />
-            <Route path="/TestShop" element={<TestShop />} />
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/ItemListContainer" element={<ItemListContainer />} />
-            <Route
-              path="/ItemListContainer/:categoryId"
-              element={<ItemListContainer />}
-            />
+            <Route path="/Shop" element={<ItemListContainer />} />
+            <Route path="/Shop/:categoryId" element={<ItemListContainer />} />
             <Route
               path="/ItemDetailContainer/:id"
               element={<ItemDetailContainer />}

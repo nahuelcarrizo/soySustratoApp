@@ -1,25 +1,35 @@
-import { useContext } from "react";
+import { collectionGroup, getDocs, getFirestore } from "firebase/firestore";
+import React, { useContext } from "react";
 import { MiContexto } from "../../context/CartContext";
 import ItemCount from "./ItemCount";
 
-export default function ItemDetail({ itemReq }) {
-  console.log(itemReq); // []
+import { useEffect, useState } from "react";
+
+export default function ItemDetail({ itemReq, id }) {
+  const [collection, setCollection] = useState();
+  const db = getFirestore();
 
   const { addItem } = useContext(MiContexto);
   function addCant(cant) {
     addItem(cant, itemReq);
   }
+  console.log(itemReq.coleccion);
+  const col = itemReq.coleccion;
+  console.log(col);
+
+  useEffect((col) => {
+    const prodsCollection = collectionGroup(db);
+    getDocs(prodsCollection).then((res) => {
+      setCollection(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+  }, []);
+
+  console.log(collection);
 
   return (
     <>
-      <div className="d-flex flex-row mt-5 ms-5">
-        <img
-          className="itemImg img-detail w-25"
-          src={itemReq.img}
-          alt="Card image cap"
-        />
-
-        <div className="itemBody ps-5 d-flex flex-column justify-content-start">
+      <div className="det-cont row justify-content-between">
+        <div className="col-6 ps-5 d-flex flex-column justify-content-start">
           <small className="text-muted">{itemReq.categoria}</small>
           <h3>{itemReq.nombre}</h3>
           <span>{itemReq.precio}</span>
@@ -29,9 +39,17 @@ export default function ItemDetail({ itemReq }) {
               <Link to={`/Cart`}>Finalizar Compra</Link>
             </>
           ) : ( */}
-          <div className="w-50">
+          <div className="text-light">
             <ItemCount stock={itemReq.stock} initial={1} addCant={addCant} />
           </div>
+        </div>
+
+        <div className="col-4 ms-2">
+          <img
+            className="itemImg img-detail m-0"
+            src={itemReq.img}
+            alt="Card image cap"
+          />
         </div>
       </div>
     </>

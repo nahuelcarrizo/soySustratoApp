@@ -5,8 +5,8 @@
 @use "./components/checkout";
 @use "./components/cartwidget";
 @use "./components/item";
-@use "./components/test";
-@use "./components/testshop";
+@use "./components/itemlist";
+@use "./components/shop";
 @use "./components/dropdown";
 
 //Pages
@@ -17,7 +17,4 @@
 
 :root {
   --border-gray: 1px solid #ededed;
-}
-body section {
-  background: linear-gradient(0deg, rgb(255, 255, 255) 98%, #ebe9e96b 100%);
 }

@@ -6,5 +6,119 @@
   height: 24rem;
   border-radius: 0 7.5rem;
   z-index: 30;
-  padding: 3.5rem 4rem 3rem;
+  padding: 3rem 3.3rem 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300 !important;
+  &::before {
+    top: 5rem;
+    bottom: 5rem;
+    left: 37%;
+    content: "";
+    position: absolute;
+    width: 1px;
+    background: #f3d3c9;
+  }
+
+  & h6 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+
+  & p {
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+  }
+}
+
+.nav__cat-itemLeft {
+  height: 2.5rem;
+
+  & img {
+    object-fit: cover;
+    height: 60%;
+  }
+}
+.nav__cat-itemRight {
+}
+.nav-vaj img {
+  height: 80%;
+}
+
+.nav-cat-button {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.7rem 2.7rem 0.7rem 1rem;
+  border-radius: 2.7rem;
+  background-color: #a4d370;
+  color: #79585e;
+  position: relative;
+  &:hover {
+    transition: transform 0.6s, background 0.6s;
+    background-color: #77b136;
+    color: #79585e;
+    & svg {
+      transform: translate(0.3rem, -0.05rem);
+      font-size: 1.4rem;
+    }
+  }
+
+  & span {
+    padding-right: 0.7rem;
+    color: black;
+    letter-spacing: 0.3px;
+  }
+  & svg {
+    color: #79585e;
+    position: absolute;
+    top: 15px;
+  }
+}
+
+.nav__cat-all {
+  background-repeat: no-repeat;
+  background-image: url("/src/components/imgs/1b-portada.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 2.5rem;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  filter: brightness(1.1);
+
+  & font {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-right: 18px;
+  }
+  & span:first-child {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    color: #231f20;
+    z-index: 50;
+    padding-bottom: 20px;
+  }
+  & svg {
+    color: #231f20;
+  }
+}
+
+.all-link {
+  &:hover {
+    transform: height 2s linear;
+    & .all-span {
+      height: 75%;
+    }
+  }
+
+  .all-span {
+    background: linear-gradient(to top, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-radius: 0 2.3rem;
+  }
 }

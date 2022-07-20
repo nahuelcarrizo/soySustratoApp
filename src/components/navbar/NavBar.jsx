@@ -15,7 +15,7 @@ function NavBar() {
     <header className="position-absolute">
       <div className="position-relative bg-transparent">
         <div className="header-inner d-flex justify-content-between align-items-center">
-          <Link className="navbar-brand ms-4" to={`/ItemListContainer`}>
+          <Link className="navbar-brand ms-4" to={`/Shop`}>
             <img
               src={logo}
               width="210"
@@ -62,8 +62,7 @@ function NavBar() {
                       CATEGORIAS
                       <GoChevronDown className="ms-1 h3" />
                     </Link>
-                    {/*   {open && <DropdownCat />} */}
-                    <DropdownCat />
+                    {open && <DropdownCat />}
                   </li>
                   <FaSearch className="text-light h4 nav-item" />
                   <UserWidget icon={<UserIcon className="h1" />} />

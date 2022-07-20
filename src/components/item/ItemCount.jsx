@@ -9,6 +9,7 @@ export default function ItemCount({ stock, initial, addCant }) {
   const [sStock, setsStock] = useState(false);
   const [toCart, setToCart] = useState(false);
 
+  console.log(stock);
   useEffect(() => {
     if (cant > stock) {
       setCant(stock);
@@ -21,9 +22,9 @@ export default function ItemCount({ stock, initial, addCant }) {
 
   return (
     <>
-      <div className="row pt-3 ps-2 pe-2">
+      <div className="row pt-1">
         <div
-          className="col-2 d-inline-flex flex-column align-items-center justify-content-center bg-white flex-grow-0"
+          className="rounded col-2 d-inline-flex flex-column align-items-center justify-content-center bg-white flex-grow-0"
           id="buttonCount"
         >
           <button

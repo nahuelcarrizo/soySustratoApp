@@ -1,0 +1,42 @@
+.test {
+  z-index: 1;
+  width: 100%;
+}
+
+.product-intro-left {
+  right: auto;
+  left: 0;
+  bottom: auto;
+  height: 550px;
+  overflow: hidden;
+  background-image: url("../components/imgs/left-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.product-intro-right {
+  bottom: 0;
+  right: 0;
+  top: 0;
+  border-radius: 0 0 0 220px;
+  height: 790px;
+  overflow: hidden;
+  background-color: blue;
+  background-image: url("../components/imgs/right-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.product-intro-white {
+  left: 0;
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  top: 220px;
+  background: #e6e6e6;
+  border-radius: 0 220px 0 0;
+  height: 645px;
+}
+
+.item-detail {
+  top: 20rem;
+  position: absolute;
+}

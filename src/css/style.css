@@ -11169,11 +11169,14 @@ header {
 .navbar-down {
   padding-top: 0.85rem;
 }
-.navbar-down > ul > li > a {
+.navbar-down > ul > li a {
   font-size: 1.3rem;
   font-family: "Faro";
   color: white;
   letter-spacing: 2px;
+}
+.navbar-down > ul > li a span {
+  font-size: 1rem;
 }
 
 .nav-underline::after {
@@ -11201,6 +11204,11 @@ header {
   letter-spacing: 0.4px;
   font-weight: 300;
 }
+.navbar-up div ul li a {
+  color: white;
+  font-weight: 300;
+  font-family: "Poppins";
+}
 
 .icon-button {
   /*   --button-size: calc(var(--nav-size) * 0.5);
@@ -11217,7 +11225,7 @@ header {
   cursor: pointer;
 }
 .icon-button svg {
-  bottom: 1.5px;
+  bottom: 2px;
   position: relative;
 }
 
@@ -11362,6 +11370,16 @@ form div:first-child {
   font-weight: 500;
 }
 
+.det-cont {
+  width: 63%;
+}
+
+.itemBody p {
+  font-family: "Poppins";
+  padding-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
 .shape {
   height: 25.6rem;
   padding-top: 0;
@@ -11373,17 +11391,21 @@ form div:first-child {
   right: 0;
 }
 
-.itemImg {
-  border-radius: 5px;
+.item-img {
+  width: 18.4rem;
+  height: 16.3rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img-detail {
   border-radius: 17px;
+  width: 20rem;
 }
 
 .item-all {
   position: relative;
-  border-radius: 5px;
+  border-radius: 0 2.5rem;
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 -1px 5px rgba(0, 0, 0, 0.05);
   flex-direction: column;
@@ -11402,7 +11424,7 @@ form div:first-child {
   right: auto;
   left: 0;
   bottom: auto;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   background-image: url("../components/imgs/left-background.jpg");
   background-size: cover;
@@ -11414,7 +11436,7 @@ form div:first-child {
   right: 0;
   top: 0;
   border-radius: 0 0 0 220px;
-  height: 865px;
+  height: 790px;
   overflow: hidden;
   background-color: blue;
   background-image: url("../components/imgs/right-background.jpg");
@@ -11428,9 +11450,14 @@ form div:first-child {
   width: 50%;
   bottom: 0;
   top: 220px;
-  background: #fff;
+  background: #e6e6e6;
   border-radius: 0 220px 0 0;
   height: 645px;
+}
+
+.item-detail {
+  top: 20rem;
+  position: absolute;
 }
 
 .shop-intro {
@@ -11488,9 +11515,18 @@ form div:first-child {
   max-height: 100%;
 }
 .shop-intro__img img {
-  width: 23.75rem;
-  height: 18.125rem;
+  width: 20rem;
+  height: 16.125rem;
   filter: drop-shadow(0 45px 10px rgba(26, 25, 25, 0.482));
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 5rem;
+  margin-bottom: 5rem;
+  min-height: 40rem;
 }
 
 .dropdown-cat {
@@ -11501,13 +11537,118 @@ form div:first-child {
   height: 24rem;
   border-radius: 0 7.5rem;
   z-index: 30;
-  padding: 3.5rem 4rem 3rem;
+  padding: 3rem 3.3rem 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300 !important;
+}
+.dropdown-cat::before {
+  top: 5rem;
+  bottom: 5rem;
+  left: 37%;
+  content: "";
+  position: absolute;
+  width: 1px;
+  background: #f3d3c9;
+}
+.dropdown-cat h6 {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+.dropdown-cat p {
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+}
+
+.nav__cat-itemLeft {
+  height: 2.5rem;
+}
+.nav__cat-itemLeft img {
+  object-fit: cover;
+  height: 60%;
+}
+
+.nav-vaj img {
+  height: 80%;
+}
+
+.nav-cat-button {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.7rem 2.7rem 0.7rem 1rem;
+  border-radius: 2.7rem;
+  background-color: #a4d370;
+  color: #79585e;
+  position: relative;
+}
+.nav-cat-button:hover {
+  transition: transform 0.6s, background 0.6s;
+  background-color: #77b136;
+  color: #79585e;
+}
+.nav-cat-button:hover svg {
+  transform: translate(0.3rem, -0.05rem);
+  font-size: 1.4rem;
+}
+.nav-cat-button span {
+  padding-right: 0.7rem;
+  color: black;
+  letter-spacing: 0.3px;
+}
+.nav-cat-button svg {
+  color: #79585e;
+  position: absolute;
+  top: 15px;
+}
+
+.nav__cat-all {
+  background-repeat: no-repeat;
+  background-image: url("/src/components/imgs/1b-portada.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 2.5rem;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  filter: brightness(1.1);
+}
+.nav__cat-all font {
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-right: 18px;
+}
+.nav__cat-all span:first-child {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  color: #231f20;
+  z-index: 50;
+  padding-bottom: 20px;
+}
+.nav__cat-all svg {
+  color: #231f20;
+}
+
+.all-link:hover {
+  transform: height 2s linear;
+}
+.all-link:hover .all-span {
+  height: 75%;
+}
+.all-link .all-span {
+  background: linear-gradient(to top, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  border-radius: 0 2.3rem;
 }
 
 :root {
   --bg: rgb(255, 255, 255);
   --bg-accent: rgb(170, 165, 165);
-  --text-color: white;
+  --text-color: black;
   --nav-size: 85px;
   --border: 1px solid black;
   --border-radius: 8px;
@@ -11572,10 +11713,6 @@ body {
 }
 :root {
   --border-gray: 1px solid #ededed;
-}
-
-body section {
-  background: linear-gradient(0deg, rgb(255, 255, 255) 98%, rgba(235, 233, 233, 0.4196078431) 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
